@@ -1,11 +1,13 @@
 import { Outlet } from "react-router-dom";
 import PropTypes from "prop-types";
 import Navigation from "./components/Navigation";
+import Loading from "./components/Loading"
 
 function Layout({ onSignOut }) {
   return (
     <>
       <header>
+        <Loading />
         <Navigation onSignOut={onSignOut} />
       </header>
       <main>

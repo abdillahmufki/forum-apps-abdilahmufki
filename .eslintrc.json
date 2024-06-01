@@ -18,7 +18,7 @@
     "react",
     "react-hooks",
     "prettier",
-    "cycpress"
+    "cypress"
   ],
   "rules": {
     "import/prefer-default-export": "off",
