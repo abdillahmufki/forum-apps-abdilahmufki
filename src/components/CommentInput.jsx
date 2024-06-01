@@ -7,18 +7,18 @@ import "../styles/quill.custom.css";
 function CommentInput({ onCreateComment }) {
   const quillRef = useRef();
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  //   let content = "";
-  //   if (quillRef.current.getLength() > 1) {
-  //     content = quillRef.current.getSemanticHTML();
-  //   }
+    let content = "";
+    if (quillRef.current.getLength() > 1) {
+      content = quillRef.current.getSemanticHTML();
+    }
 
-  //   onCreateComment(content).then(() => {
-  //     quillRef.current.setContents([]);
-  //   });
-  // };
+    onCreateComment(content).then(() => {
+      quillRef.current.setContents([]);
+    });
+  };
 
   return (
     <form className="text-end" onSubmit={handleSubmit}>
