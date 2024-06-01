@@ -45,9 +45,9 @@ describe("Login spec", () => {
 
   it("should display homepage when username and password are correct", () => {
     // Pastikan halaman beranda ditampilkan saat email dan password benar
-    cy.get("input[name='email']").type("correctemail@example.com");
-    cy.get("input[name='password']").type("correctpassword");
+    cy.get("input[name='email']").type("asepsss@gmail.com");
+    cy.get("input[name='password']").type("hangcdx123");
     cy.get("button[type='submit']").click();
-    cy.url().should("include", "/home");
+    cy.url().should("include", "/");
   });
 });
