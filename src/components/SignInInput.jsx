@@ -8,25 +8,6 @@ function SignInInput({ onSignIn }) {
   const [password, handlePasswordChange, setPassword] = useInput("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (!email.trim()) {
-      setErrorMessage("Please enter your email");
-      return;
-    }
-    if (!password.trim()) {
-      setErrorMessage("Please enter your password");
-      return;
-    }
-    // Simulate incorrect credentials
-    if (email !== "user@example.com" || password !== "password123") {
-      setErrorMessage("Invalid email or password");
-      return;
-    }
-    // Simulate successful sign-in
-    onSignIn({ email, password });
-  }
-
   return (
     <>
       <form onSubmit={handleSubmit}>
