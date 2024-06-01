@@ -8,6 +8,25 @@ function SignInInput({ onSignIn }) {
   const [password, handlePasswordChange, setPassword] = useInput("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!email.trim()) {
+      setErrorMessage("Please enter your email");
+      return;
+    }
+    if (!password.trim()) {
+      setErrorMessage("Please enter your password");
+      return;
+    }
+    // Simulate incorrect credentials
+    if (email !== "user@example.com" || password !== "password123") {
+      setErrorMessage("Invalid email or password");
+      return;
+    }
+    // Simulate successful sign-in
+    onSignIn({ email, password });
+  }
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -15,7 +34,7 @@ function SignInInput({ onSignIn }) {
           <div className="alert alert-danger" role="alert">
             {errorMessage}
           </div>
-        )}
+        )}{" "}
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
             Email
@@ -29,7 +48,7 @@ function SignInInput({ onSignIn }) {
             id="email"
             className="form-control"
           />
-        </div>
+        </div>{" "}
         <div className="mb-3">
           <label htmlFor="password" className="form-label">
             Password
@@ -42,7 +61,7 @@ function SignInInput({ onSignIn }) {
             value={password}
             id="password"
             className="form-control"
-          />
+          />{" "}
         </div>
         <button type="submit" className="btn btn-primary w-100">
           Sign In
