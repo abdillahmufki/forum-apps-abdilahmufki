@@ -15,6 +15,8 @@ function CommentInput({ onCreateComment }) {
       content = quillRef.current.getSemanticHTML();
     }
 
+    //test
+
     onCreateComment(content).then(() => {
       quillRef.current.setContents([]);
     });
